@@ -1,0 +1,39 @@
+/*lora-regular font*/
+.lora-regular {
+  font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+/* Initial hidden state */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+ 
+  .hero-content {
+    flex-direction: column; /* Stack content for mobile */
+    text-align: center; /* Center text for mobile */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Smaller font size for mobile */
+  }
+
+  p {
+    font-size: 1rem; /* Smaller font size for mobile */
+  }
+
+  button {
+    width: 100%; /* Full-width button for mobile */
+  }
+
+  video {
+    max-width: 100%;
+    height: auto;
+    
+  }
+}
