@@ -31,14 +31,14 @@ const Products = ({ products }) => {
       <Navbar />
       <section className="lora-regular lg:mt-10 mt-5 lg:mb-10 mb-5 lora-regular">
         <h1 className="text-2xl font-bold lg:text-3xl lg:font-bold text-center">
-          Paints We Sell
+          Paints
         </h1>
         <div className="lg:flex justify-end lg:mr-5 lg:-mt-10 flex justify-end mr-2 -mt-10 md:w-auto">
           <div className="form-control">
             <input
               type="text"
               placeholder="Search"
-              className="input input-bordered lg:w-96 w-20 md:w-auto"
+              className="input input-bordered lg:w-96 w-32 md:w-auto"
               value={searchTerm}
               onChange={handleSearchChange} // Update search term on change
             />
