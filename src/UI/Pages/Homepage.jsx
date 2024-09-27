@@ -32,7 +32,6 @@ const Homepage = ({ props }) => {
 
   return (
     <div>
-      <Navbar />
       
       <section className='lora-regular'>
         <div className='hero min-h-screen' style={{ backgroundColor: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -114,7 +113,7 @@ const Homepage = ({ props }) => {
         </div>
       </section>
   
-      <Footer />
+     
     </div>
   );
 };

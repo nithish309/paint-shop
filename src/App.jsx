@@ -3,6 +3,9 @@ import Products from './UI/Pages/Products';
 import Homepage from './UI/Pages/Homepage';
 import Contact from './UI/Pages/Contact';
 import ProductDetails from './UI/Pages/ProductDetails';
+import Navbar from './UI/Components/Navabar';
+import Footer from './UI/Components/Footer';
+import Cart from './UI/Pages/Cart';
 
 const PaintTypes=[
   {
@@ -139,15 +142,21 @@ const ProductsList = [
   },
   
 ];
-
+import { useState } from 'react';
 const App = () => {
+  const [cartItems, setCartItems] = useState([]); // Ensure this is an array
   return (
-    <Routes>
-      <Route path="/" element={<Homepage props={PaintTypes}/>} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="/products" element={<Products products={ProductsList} />} />
-      <Route path="/products/:id" element={<ProductDetails products={ProductsList} />} /> {/* Dynamic route for product details */}
-    </Routes>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Homepage props={PaintTypes}/>} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/products" element={<Products products={ProductsList} setCartItems={setCartItems} />} />           
+        <Route path="/products/:id" element={<ProductDetails products={ProductsList} />} /> {/* Dynamic route for product details */}
+        <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems}/>} />
+      </Routes>
+      <Footer />
+     </>
   );
 };
 

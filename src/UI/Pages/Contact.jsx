@@ -43,7 +43,6 @@ const Contact = () => {
 
   return (
     <div>
-      <Navbar />
       <div className="container mx-auto p-6 lg:w-1/2 lora-regular">
         <h1 className="text-2xl font-bold lg:text-3xl lg:font-bold text-center">Contact Us</h1>
         <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -104,7 +103,6 @@ const Contact = () => {
         </form>
         {statusMessage && <p className="text-center">{statusMessage}</p>}
       </div>
-      <Footer />
     </div>
   );
 };
