@@ -26,7 +26,7 @@ const Products = ({ products, setCartItems }) => {
 
   // Handle adding product to cart
   const handleAddToCart = (product) => {
-    const quantity = prompt(`Enter quantity for ${product.name}:`, 1);
+    const quantity = prompt(`Enter quantity :`, 1);
   
     if (quantity && parseInt(quantity) > 0) {
       // Parse the price as a number
