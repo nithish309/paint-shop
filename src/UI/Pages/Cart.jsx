@@ -1,4 +1,5 @@
 import React from 'react';
+import LoadingSpinner from '../Components/LoadingSpinner';
 
 const Cart = ({ cartItems = [], setCartItems }) => {
   
@@ -16,8 +17,6 @@ const Cart = ({ cartItems = [], setCartItems }) => {
   const removeFromCart = (id) => {
     const updatedCart = cartItems.filter(item => item.id !== id);
     setCartItems(updatedCart);
-    // Update localStorage when the cart changes
-    //localStorage.setItem('cartItems', JSON.stringify(updatedCart));
   };
 
   return (
@@ -43,9 +42,9 @@ const Cart = ({ cartItems = [], setCartItems }) => {
               <p>Total: ₹ {item.totalPrice.toFixed(2)}</p>
               <div className="card-actions justify-end">
                 <button
-                  className="btn"
+                  className="btn bar"
                   onClick={() => removeFromCart(item.id)}
-                  style={{ color: 'white', backgroundColor: 'red' }}
+                  // style={{ color: 'white', backgroundColor: 'red' }}
                 >
                   Remove
                 </button>
@@ -55,7 +54,7 @@ const Cart = ({ cartItems = [], setCartItems }) => {
         ))}
       </div>
       <h3 className="text-xl font-bold mt-10 text-center">
-        Total Amount: ₹ {totalAmount.toFixed(2)} {/* Display total amount */}
+        Total Amount: ₹ {totalAmount.toFixed(2)} 
       </h3>
     </section>
   );

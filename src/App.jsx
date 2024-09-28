@@ -150,7 +150,7 @@ const App = () => {
       return savedCartItems ? JSON.parse(savedCartItems) : [];
     } catch (error) {
       console.error("Error parsing cartItems from localStorage:", error);
-      return []; // return an empty array if there's an error
+      return []; 
     }
   });
 

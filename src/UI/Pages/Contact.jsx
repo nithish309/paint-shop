@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com'; // Import EmailJS
-import Footer from "../Components/Footer";
-import Navbar from "../Components/Navabar";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    user_name: '',
+    user_email: '',
+    user_message: ''
   });
   const [loading, setLoading] = useState(false); // State for loading spinner
   const [statusMessage, setStatusMessage] = useState(''); // State for status message
@@ -24,15 +22,28 @@ const Contact = () => {
     e.preventDefault();
     setLoading(true);
     setStatusMessage('');
-
-    emailjs.send('service_gzi0mnc', 'template_i1ys5wg', formData, 'Bd9DrMKN3xYbRF1lK')
+  
+    // Log the form data to check if fields are updating correctly
+    console.log('Form Data before sending:', formData);
+  
+    // Structure the email parameters
+    const emailParams = {
+        name: formData.user_name,
+        email: formData.user_email,
+        message: formData.user_message
+    };
+  
+    // Ensure the form data is correctly structured for EmailJS
+    emailjs
+      .send('service_gzi0mnc', 'template_i1ys5wg', emailParams, 'Bd9DrMKN3xYbRF1lK')
       .then((response) => {
+        console.log('EmailJS Response:', response);
         console.log('SUCCESS!', response.status, response.text);
         setStatusMessage('Message sent successfully!');
-        setFormData({ name: '', email: '', message: '' }); // Clear form
+        setFormData({ user_name: '', user_email: '', user_message: '' }); // Clear form
       })
       .catch((error) => {
-        console.error('FAILED...', error);
+        console.error('EmailJS Error:', error);
         setStatusMessage('Failed to send message. Please try again.');
       })
       .finally(() => {
@@ -40,67 +51,57 @@ const Contact = () => {
         setTimeout(() => setStatusMessage(''), 3000); // Clear message after 3 seconds
       });
   };
+  
 
   return (
     <div>
       <div className="container mx-auto p-6 lg:w-1/2 lora-regular">
         <h1 className="text-2xl font-bold lg:text-3xl lg:font-bold text-center">Contact Us</h1>
-        <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-              Name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              value={formData.name}
-              onChange={handleInputChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Enter your name"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleInputChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              placeholder="Enter your email"
-              required
-            />
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
-              Message
-            </label>
-            <textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleInputChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              rows="5"
-              placeholder="Enter your message"
-              required
-            ></textarea>
-          </div>
-          <div className="flex items-center justify-center">
-            <button
-              type="submit"
-              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              disabled={loading}
-            >
-              {loading ? 'Sending...' : 'Send Message'}
-            </button>
-          </div>
+        <form onSubmit={handleSubmit} className="mt-6 lg:mt-10 lg:mb-10 mb-6 text-center">
+          {/* Name Input */}
+          <input 
+            type="text" 
+            name="user_name" 
+            className="input input-bordered sm:w-full lg:w-96 w-full" 
+            placeholder="Name" 
+            onChange={handleInputChange} 
+            value={formData.user_name} 
+            required 
+          />
+          
+          {/* Email Input */}
+          <input 
+            type="email" 
+            name="user_email" 
+            className="input input-bordered mt-10 lg:mt-10 sm:w-full lg:w-96 w-full" 
+            placeholder="Email" 
+            onChange={handleInputChange} 
+            value={formData.user_email} 
+            required 
+          />
+          
+          {/* Message Input */}
+          <textarea 
+            name="user_message" 
+            className="textarea textarea-bordered mt-10 lg:mt-10 sm:w-full lg:w-96 w-full" 
+            placeholder="Message" 
+            onChange={handleInputChange} 
+            value={formData.user_message} 
+            required 
+          />
+          
+          {/* Submit Button */}
+          <button 
+            type="submit" 
+            className="btn btn-success mt-10 lg:mt-10 sm:w-full lg:w-96 w-3/6" 
+            style={{ color: 'white' }} 
+            disabled={loading} // Disable button during loading
+          >
+            {loading ? 'Sending...' : 'Send'}
+          </button>
         </form>
+
+        {/* Status Message */}
         {statusMessage && <p className="text-center">{statusMessage}</p>}
       </div>
     </div>

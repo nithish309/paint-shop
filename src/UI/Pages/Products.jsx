@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import Navbar from '../Components/Navabar';
-import Footer from '../Components/Footer';
 import LoadingSpinner from '../Components/LoadingSpinner';
 
 const Products = ({ products, setCartItems }) => {
@@ -34,7 +32,7 @@ const Products = ({ products, setCartItems }) => {
       const cartItem = {
         ...product,
         quantity: parseInt(quantity),
-        totalPrice: price * parseInt(quantity), // Calculate total price
+        totalPrice: price * parseInt(quantity), 
       };
   
       setCartItems((prevItems) => [...prevItems, cartItem]);
@@ -60,7 +58,7 @@ const Products = ({ products, setCartItems }) => {
             <input
               type="text"
               placeholder="Search"
-              className="input input-bordered lg:w-96 w-32 md:w-auto"
+              className="input input-bordered lg:w-96 w-32 md:w-full"
               value={searchTerm}
               onChange={handleSearchChange}
             />
