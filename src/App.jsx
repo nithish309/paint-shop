@@ -142,9 +142,24 @@ const ProductsList = [
   },
   
 ];
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 const App = () => {
-  const [cartItems, setCartItems] = useState([]); // Ensure this is an array
+  const [cartItems, setCartItems] = useState(() => {
+    try {
+      const savedCartItems = localStorage.getItem('cartItems');
+      return savedCartItems ? JSON.parse(savedCartItems) : [];
+    } catch (error) {
+      console.error("Error parsing cartItems from localStorage:", error);
+      return []; // return an empty array if there's an error
+    }
+  });
+
+  // Update localStorage whenever cartItems state changes
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
+   
+
   return (
     <>
       <Navbar />
