@@ -17,8 +17,8 @@ const ProductDetails = ({ products }) => {
           {product.name}
         </h1>
         <div className="flex justify-center mt-10">
-          <div className="bg-white lg:w-96 sm:w-screen mx-2 my-0">
-            <figure className="px-10">
+          <div className="bg-white lg:w-96 sm:w-full mx-2 my-0">
+            <figure className="px-10 md:flex justify-center sm:flex justify-center">
               <img
                 src={product.image}
                 alt={product.name}
