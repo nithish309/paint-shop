@@ -35,7 +35,7 @@ const Cart = ({ cartItems = [], setCartItems }) => {
               />
             </figure>
             <div className="card-body">
-              <h4 className="card-title font-semibold">{item.name}</h4>
+              <h6 className="card-title font-semibold text-lg">{item.name}</h6>
               <p>Price: {item.price}</p>
               <p>Quantity: {item.quantity}</p>
               <p>Total: ₹ {item.totalPrice.toFixed(2)}</p>
