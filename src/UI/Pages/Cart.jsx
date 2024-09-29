@@ -1,5 +1,4 @@
 import React from 'react';
-import LoadingSpinner from '../Components/LoadingSpinner';
 
 const Cart = ({ cartItems = [], setCartItems }) => {
   
@@ -44,7 +43,6 @@ const Cart = ({ cartItems = [], setCartItems }) => {
                 <button
                   className="btn bar"
                   onClick={() => removeFromCart(item.id)}
-                  // style={{ color: 'white', backgroundColor: 'red' }}
                 >
                   Remove
                 </button>

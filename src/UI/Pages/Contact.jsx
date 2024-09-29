@@ -14,26 +14,23 @@ const Contact = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value // eg :  name :     value --->html attributes
+                    //       user_name: 'nk'
+                    //       user_email: 'nk@gmail.com'
+                    //       user_message: 'hi there'
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-    setStatusMessage('');
-  
-    // Log the form data to check if fields are updating correctly
-    console.log('Form Data before sending:', formData);
-  
-    // Structure the email parameters
+    
     const emailParams = {
         name: formData.user_name,
         email: formData.user_email,
         message: formData.user_message
     };
   
-    // Ensure the form data is correctly structured for EmailJS
     emailjs
       .send('service_gzi0mnc', 'template_i1ys5wg', emailParams, 'Bd9DrMKN3xYbRF1lK')
       .then((response) => {
@@ -47,8 +44,8 @@ const Contact = () => {
         setStatusMessage('Failed to send message. Please try again.');
       })
       .finally(() => {
-        setLoading(false); // Stop loading
-        setTimeout(() => setStatusMessage(''), 3000); // Clear message after 3 seconds
+        setLoading(false);
+        setTimeout(() => setStatusMessage(''),3000); // Clear message after 3 seconds
       });
   };
   

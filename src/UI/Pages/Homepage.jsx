@@ -100,7 +100,7 @@ const Homepage = ({ props }) => {
         <h1 className='text-2xl font-bold lg:text-3xl lg:font-bold text-center'>Paints Type</h1>
         <div className="flex flex-col lg:flex-row lg:justify-between lg:space-x-5 lg:mt-10 lg:mb-10 lg:ml-10 lg:mr-10 ml-3 mr-3 mb-5 mt-3">
           {props.map(paint => (
-            <div key={paint.id} className="card sm:w-screen lg:w-96 shadow-xl mb-10">
+            <div key={paint.id} className="card sm:w-full lg:w-96 shadow-xl mb-10">
               <div className="card-body">
                 <h2 className="card-title">{paint.title}</h2>
                 <p className="text-justify">{paint.description}</p>
