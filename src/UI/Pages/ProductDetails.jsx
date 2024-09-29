@@ -27,16 +27,16 @@ const ProductDetails = ({ products }) => {
                 height="300px"
               />
             </figure>
-            <div className="card-body items-center text-center">
-              <h4 className="lg:font-bold lg:text-3xl text-2xl font-bold">
-                {product.price} 
-              </h4>
-            </div>
           </div>
         </div>
-        <p className="lg:mt-4 mt-0 text-md text-gray-600 lg:text-lg text-justify ml-3 mr-3">
+        <div className="card-body items-center text-center">
+          <h4 className="lg:font-bold lg:text-3xl text-2xl font-bold">
+            {product.price} 
+          </h4>
+          <p className="lg:mt-4 mt-0 text-md text-gray-600 lg:text-lg text-justify ml-3 mr-3">
             {product.description}
-        </p>
+          </p>
+        </div>
       </section>
     </div>
   );
