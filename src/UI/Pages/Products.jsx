@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import LoadingSpinner from '../Components/LoadingSpinner';
 
-const Products = ({ products, setCartItems }) => {
+const Products = ({ products, setCartItems,theme,toggleTheme }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredProducts, setFilteredProducts] = useState(products);
   const [loading, setLoading] = useState(false);
@@ -61,6 +61,8 @@ const Products = ({ products, setCartItems }) => {
               className="input input-bordered lg:w-96 w-32 md:w-full"
               value={searchTerm}
               onChange={handleSearchChange}
+               style={{  backgroundColor: theme === 'light' ? 'white' : 'grey', 
+              color: theme === 'light' ? '#333' : '#fff'}}
             />
           </div>
         </div>
@@ -69,11 +71,14 @@ const Products = ({ products, setCartItems }) => {
           <LoadingSpinner />
         ) : (
           <div className="flex flex-wrap justify-center lg:gap-20 lg:mt-5 lg:mb-20 mb-10 mt-5 sm:gap-0">
+           
             {filteredProducts.length > 0 ? (
               filteredProducts.map((product) => (
                 <div
                   className="card bg-white lg:w-96 sm:w-full mx-2 my-4 hover:shadow-2xl hover:shadow-slate-400 rounded-none hover:border rounded-xl border-black"
                   key={product.id}
+                  style={{  backgroundColor: theme === 'light' ? 'white' : '#333', 
+                    color: theme === 'light' ? '#333' : '#fff'}}
                 >
                   <figure className="px-10 pt-10">
                     <img
@@ -106,7 +111,7 @@ const Products = ({ products, setCartItems }) => {
                 </div>
               ))
             ) : (
-              <p className="text-center mt-10 font-bold">No products found</p>
+              <p className="text-center mt-10 font-bold lg:text-2xl text-lg">No products found</p>
             )}
           </div>
         )}

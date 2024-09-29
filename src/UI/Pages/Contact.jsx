@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com'; // Import EmailJS
 
-const Contact = () => {
+const Contact = ({ theme }) => {
   const [formData, setFormData] = useState({
     user_name: '',
     user_email: '',
@@ -62,7 +62,9 @@ const Contact = () => {
             className="input input-bordered sm:w-full lg:w-96 w-full" 
             placeholder="Name" 
             onChange={handleInputChange} 
-            value={formData.user_name} 
+            value={formData.user_name}
+            style={{  backgroundColor: theme === 'light' ? 'white' : 'grey', 
+              color: theme === 'light' ? '#333' : '#fff'}}
             required 
           />
           
@@ -74,6 +76,8 @@ const Contact = () => {
             placeholder="Email" 
             onChange={handleInputChange} 
             value={formData.user_email} 
+            style={{  backgroundColor: theme === 'light' ? 'white' : 'grey', 
+              color: theme === 'light' ? '#333' : '#fff'}}
             required 
           />
           
@@ -84,6 +88,8 @@ const Contact = () => {
             placeholder="Message" 
             onChange={handleInputChange} 
             value={formData.user_message} 
+            style={{  backgroundColor: theme === 'light' ? 'white' : 'grey', 
+              color: theme === 'light' ? '#333' : '#fff'}}
             required 
           />
           

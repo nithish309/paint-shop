@@ -6,6 +6,16 @@ import ProductDetails from './UI/Pages/ProductDetails';
 import Navbar from './UI/Components/Navabar';
 import Footer from './UI/Components/Footer';
 import Cart from './UI/Pages/Cart';
+import "../src/index.css";
+import prod1 from "/images/1.png";
+import prod4 from "/images/4.png";
+import prod5 from "/images/5.png";
+import prod7 from "/images/7.png";
+import prod8 from "/images/8.png";
+import prod9 from "/images/9.png";
+import prod10 from "/images/10.png";
+import prod11 from "/images/11.png";
+import prod12 from "/images/12.png";
 
 const PaintTypes=[
   {
@@ -39,7 +49,7 @@ const ProductsList = [
     id: 1,
     name: "Generic Asian Paint Royal Luxury Emulsion 1Ltr. Desert Belge - Beige",
     price: "₹ 573",
-    image: "https://m.media-amazon.com/images/I/61pXhOU-aTL._SL1200_.jpg",
+    image: prod1,
     description:`Asian Paints Royale Luxury Emulsion 1Ltr - Desert Belge (Beige) is an excellent choice for those seeking a high-quality interior paint that combines beauty with durability. Its luxurious finish, ease of maintenance, and eco-friendly properties make it perfect for enhancing the aesthetics of any space, whether in residential or commercial settings.`
   },
   {
@@ -60,14 +70,14 @@ const ProductsList = [
     id: 4,
     name: "Berger Walmasta",
     price: "₹ 260",
-    image: "https://m.media-amazon.com/images/I/61l7CvqakQL.jpg",
+    image: prod4,
     description:`Berger Walmasta is a reliable wall putty that enhances the quality of wall surfaces, ensuring a smooth finish and improved durability. Its ease of application and water-resistant properties make it a popular choice for both professional painters and DIY projects. Whether for new constructions or renovations, Walmasta helps create a strong foundation for a beautiful paint job.`
     },
   {
     id: 5,
     name: "Berger Home Shield Dampstop For Interior And Exterior",
     price: "₹ 609",
-    image: "https://content.jdmagicbox.com/quickquotes/images_main/berger-home-shield-dampstop-for-interior-and-exterior-240633939-2afd4.png?fit=around|250:250",
+    image: prod5,
     description:`Berger Home Shield Dampstop is an effective solution for preventing moisture-related damage to walls, ensuring the durability and aesthetic appeal of both interior and exterior surfaces. Its easy application and quick drying time make it a practical choice for homeowners and professionals alike, providing peace of mind against dampness and its associated issues.`
   },
   {
@@ -81,42 +91,42 @@ const ProductsList = [
     id: 7,
     name: "Berger Luxol High Gloss Enamel",
     price: "₹ 288",
-    image: "https://m.media-amazon.com/images/I/619UksneaNL._AC_UF1000,1000_QL80_.jpg",
+    image: prod7,
     description:`Berger Luxol High Gloss Enamel is an excellent choice for achieving a durable, glossy finish on a variety of surfaces. Its combination of aesthetic appeal, resistance to wear and tear, and ease of application makes it a popular option for both residential and commercial projects, ensuring lasting beauty and protection.`
   },
   {
     id: 8,
     name: "AsianPaints Royale Health Shield Anti Bacterial All Surface Coating Paint- 1L",
     price: "₹ 900",
-    image: "https://5.imimg.com/data5/SELLER/Default/2022/11/OM/YT/KY/160342388/asian-paints-1lt-royale-health-shield-anti-bacterial-all-surface-coating.jpg",
+    image: prod8,
     description:`Asian Paints Royale Health Shield Anti-Bacterial All Surface Coating Paint is an excellent choice for those looking for a combination of beauty and functionality. Its anti-bacterial properties, durability, and ease of maintenance make it a smart option for a wide range of applications, ensuring both aesthetic appeal and health benefits in the spaces where it is used.`
   },
   {
     id: 9,
     name: "Nippon Wood Magic Wood Paint - Turkish Tile (1 Litre)",
     price: "₹ 280",
-    image: "https://5.imimg.com/data5/SELLER/Default/2023/6/312891359/CN/XZ/RK/118484817/nippon-paint-wood-magic-interior-wood-coat-500x500.jpg",
+    image: prod9,
     description:`Nippon Wood Magic Wood Paint - Turkish Tile (1 Litre) is an excellent choice for anyone looking to enhance and protect wooden surfaces. With its vibrant color, durability, and ease of application, it provides both aesthetic appeal and long-lasting protection, making it suitable for a wide range of applications in residential and commercial settings.`
   },
   {
     id: 10,
     name: "NIPPON PAINT Breeze Interiors Wall Paint",
     price: "₹ 250",
-    image: "https://rukminim2.flixcart.com/image/850/1000/xif0q/wall-paint/j/z/i/1-breeze-interior-nippon-paint-original-imagnq9x8dxhvwjt.jpeg?q=90&crop=false",
+    image: prod10,
     description:`Nippon Paint Breeze Interiors Wall Paint is an excellent choice for enhancing interior spaces with its smooth finish, durability, and eco-friendly properties. Its low odor and easy maintenance make it suitable for a variety of settings, ensuring beautiful and long-lasting results in homes and commercial areas alike.`
   },
   {
     id: 11,
     name: "Nippon Momento Ozine Special Effect Paint, Packaging Size: 20 L",
     price: "₹ 350",
-    image: "https://5.imimg.com/data5/SELLER/Default/2023/11/358978937/FE/GP/PJ/96792217/nippon-primer-1000x1000.jpeg",
+    image: prod11,
     description:`Nippon Momento Ozine Special Effect Paint (20 L) is an excellent choice for those seeking to transform their spaces with unique and artistic finishes. Its large packaging size, durability, and ease of application make it ideal for both residential and commercial projects, allowing for stunning visual effects that enhance any environment.`
   },
   {
     id: 12,
     name: "1 L Nippon Paint Weatherbond Advance Exterior Paint",
     price: "₹ 829",
-    image: "https://5.imimg.com/data5/SELLER/Default/2023/6/319222838/IU/FI/RW/28298499/nippon-paint-aircare-vg-interior-paint-500x500.png",
+    image: prod12,
     description:`Nippon Paint Weatherbond Advance Exterior Paint (1 L) is an excellent choice for homeowners and professionals seeking a reliable and durable exterior paint. Its weather resistance, mildew protection, and easy application make it perfect for various outdoor projects, ensuring long-lasting beauty and protection for exterior surfaces.`
   },
   {
@@ -158,17 +168,31 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
   }, [cartItems]);
-   
+//theme
+
+
+  const [theme, setTheme] = useState(localStorage.getItem('theme'));
+
+  const toggleTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme); // Save theme to localStorage
+  };
+
+  // Apply the theme to the body
+  useEffect(() => {
+    document.body.className = theme; // Add theme class to the body
+  }, [theme]);
 
   return (
     <>
-      <Navbar />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Routes>
-        <Route path="/" element={<Homepage props={PaintTypes}/>} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/products" element={<Products products={ProductsList} setCartItems={setCartItems} />} />           
-        <Route path="/products/:id" element={<ProductDetails products={ProductsList} />} /> {/* Dynamic route for product details */}
-        <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems}/>} />
+        <Route path="/" element={<Homepage props={PaintTypes} theme={theme} />} />
+        <Route path="/contact" element={<Contact theme={theme} />} />
+        <Route path="/products" element={<Products products={ProductsList} setCartItems={setCartItems} theme={theme} />} />           
+        <Route path="/products/:id" element={<ProductDetails products={ProductsList} theme={theme} />} /> {/* Dynamic route for product details */}
+        <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} theme={theme}/>} />
       </Routes>
       <Footer />
      </>

@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
-import Footer from "../Components/Footer";
-import Navbar from "../Components/Navabar";
 import asian from "/images/asian.png";
 import nerolac from "/images/nerolac.png";
 import berger from "/images/berger.png";
 import { Link } from 'react-router-dom';
+import paint from "/images/paint.gif";
 
-const Homepage = ({ props }) => {
+const Homepage = ({ props ,theme}) => {
   const [reveal, setReveal] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
@@ -34,7 +33,9 @@ const Homepage = ({ props }) => {
     <div>
       
       <section className='lora-regular'>
-        <div className='hero min-h-screen' style={{ backgroundColor: 'white', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <div className='hero min-h-screen' style={{  backgroundColor: theme === 'light' ? 'white' : '#333', 
+          color: theme === 'light' ? '#333' : '#fff',  display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+
           <div className="hero-content" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', width: '100%' }}>
             {/* Text Section */}
             <div className='max-w-md' style={{ transform: reveal && !isMobile ? 'translateX(-20%)' : 'translateX(0)', transition: 'transform 0.8s ease-in-out', textAlign: 'left' }}>
@@ -51,17 +52,13 @@ const Homepage = ({ props }) => {
               </Link>
             </div>
 
-            {/* Video Section */}
+           
             <div className="video-section transition-opacity duration-500 ease-in-out" style={{ transition: 'opacity 0.5s ease-in-out', marginLeft: '50px', width: '100%', maxWidth: '700px' }}>
-              <video
-                src="https://media.istockphoto.com/id/1265101432/video/close-up-colorful-splashing-paint-in-super-slow-motion.mp4?s=mp4-640x640-is&k=20&c=3TrdIBJVGqCtv6mg8QJOuCm5EtTaWEuxZarcGHuN-io="
-                autoPlay
-                muted
-                loop
+              <img
+                src={paint}
+                alt="Video"
                 style={{ width: '100%', height: 'auto' }}
-              >
-                Your browser does not support the video tag.
-              </video>
+              />
             </div>
           </div>
         </div>

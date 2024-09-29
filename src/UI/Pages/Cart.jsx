@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Cart = ({ cartItems = [], setCartItems }) => {
+const Cart = ({ cartItems = [], setCartItems,theme }) => {
   
   // Calculate the total amount based on cart items
   const totalAmount = cartItems.reduce((acc, item) => acc + item.totalPrice, 0); // 0 -> initial value
@@ -8,7 +8,7 @@ const Cart = ({ cartItems = [], setCartItems }) => {
   if (cartItems.length === 0) {
     return (
       <div className="flex justify-center items-center h-screen">
-        <h1 className="text-2xl font-bold lora-regular">Cart is empty</h1>
+        <h1 className="lg:text-2xl font-bold lora-regular text-lg">Cart is empty</h1>
       </div>
     );
   }
@@ -26,6 +26,8 @@ const Cart = ({ cartItems = [], setCartItems }) => {
           <div
             key={item.id}
             className="card card-side bg-base-100 shadow-xl flex flex-col items-center w-screen max-w-xs"
+            style={{  backgroundColor: theme === 'light' ? 'white' : '#333', 
+              color: theme === 'light' ? '#333' : '#fff'}}
           >
             <figure>
               <img
