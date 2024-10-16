@@ -14,8 +14,4 @@ body.light {
     color: #fff; /* Light text color for contrast */
   }
   
-  /* Other global styling that applies to both themes */
-  body {
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition when switching themes */
-  }
-  
+
