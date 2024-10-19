@@ -49,7 +49,8 @@ const Products = ({ products, setCartItems,theme,toggleTheme }) => {
 
   return (
     <div>
-      <section className="lora-regular lg:mt-10 mt-5 lg:mb-10 mb-5 lora-regular">
+      <section className="lora-regular lg:mt-10 mt-5 lg:mb-10 mb-5 lora-regular"  style={{backgroundColor: theme === 'light' ? 'white' : '#333', 
+                  color: theme === 'light' ? 'black' : '#fff'}}>
         <h1 className="text-2xl font-bold lg:text-3xl lg:font-bold text-center">
           Paints
         </h1>

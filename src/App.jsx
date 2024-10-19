@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import Products from './UI/Pages/Products';
 import Homepage from './UI/Pages/Homepage';
 import Contact from './UI/Pages/Contact';
+import Location from './UI/Pages/Location';
 import ProductDetails from './UI/Pages/ProductDetails';
 import Navbar from './UI/Components/Navabar';
 import Footer from './UI/Components/Footer';
@@ -193,6 +194,7 @@ const App = () => {
         <Route path="/products" element={<Products products={ProductsList} setCartItems={setCartItems} theme={theme} />} />           
         <Route path="/products/:id" element={<ProductDetails products={ProductsList} theme={theme} />} /> {/* Dynamic route for product details */}
         <Route path="/cart" element={<Cart cartItems={cartItems} setCartItems={setCartItems} theme={theme}/>} />
+        <Route path="/location" element={<Location theme={theme}/>} />
       </Routes>
       <Footer />
      </>

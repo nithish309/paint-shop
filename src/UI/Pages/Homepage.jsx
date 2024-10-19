@@ -65,8 +65,9 @@ const Homepage = ({ props ,theme}) => {
       </section>
       <hr />
 
-      <section className='lora-regular lg:mt-10 mt-5 lg:mb-10 mb-5'>
-        <h1 className='text-2xl font-bold lg:text-3xl lg:font-bold text-center'>Available Brands</h1>
+      <section className='lora-regular lg:mt-10 mt-5 lg:mb-10 mb-5'  style={{backgroundColor: theme === 'light' ? 'white' : '#333', 
+                  color: theme === 'light' ? 'black' : '#fff'}}>
+        <h1 className='text-2xl font-bold lg:text-3xl lg:font-bold text-center' >Available Brands</h1>
         <div className="carousel w-screen lg:w-11/12 lg:ml-16 mt-5 lg:mt-10">
           <div id="item1" className="carousel-item w-full">
             <img
@@ -93,7 +94,8 @@ const Homepage = ({ props ,theme}) => {
       </section>
       <hr />
       
-      <section className='lora-regular mt-10'>
+      <section className='lora-regular mt-10'  style={{backgroundColor: theme === 'light' ? 'white' : '#333', 
+                  color: theme === 'light' ? 'black' : '#fff'}}>
         <h1 className='text-2xl font-bold lg:text-3xl lg:font-bold text-center'>Paints Type</h1>
         <div className="flex flex-col lg:flex-row lg:justify-between lg:space-x-5 lg:mt-10 lg:mb-10 lg:ml-10 lg:mr-10 ml-3 mr-3 mb-5 mt-3">
           {props.map(paint => (
