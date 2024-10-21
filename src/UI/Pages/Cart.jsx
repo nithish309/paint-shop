@@ -36,8 +36,8 @@ const Cart = ({ cartItems = [], setCartItems,theme }) => {
                 className="w-full h-32 object-cover"
               />
             </figure>
-            <div className="card-body">
-              <h6 className="card-title font-semibold text-lg">{item.name}</h6>
+            <div className="card-body text-center">
+              <p className="card lg:text-l lg:font-bold text-sm font-bold">{item.name}</p>
               <p>Price: {item.price}</p>
               <p>Quantity: {item.quantity}</p>
               <p>Total: ₹ {item.totalPrice.toFixed(2)}</p>

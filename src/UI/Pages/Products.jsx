@@ -91,7 +91,7 @@ const Products = ({ products, setCartItems,theme,toggleTheme }) => {
                     />
                   </figure>
                   <div className="card-body items-center text-center">
-                    <p className="lg:card-title lg:font-semibold sm:font-bold">
+                    <p className="lg:text-lg lg:font-semibold text-sm font-bold md:text-md md:font-semibold">
                       {product.name}
                     </p>
                     <h2 className="lg:font-medium lg:text-xl sm:text-lg font-bold">

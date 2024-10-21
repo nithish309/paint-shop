@@ -1,10 +1,4 @@
-/*lora-regular font*/
-.lora-regular {
-  font-family: "Lora", serif;
-  font-optical-sizing: auto;
-  font-weight: 500;
-  font-style: normal;
-}
+
 /* Initial hidden state */
 *{
   box-sizing: border-box;
