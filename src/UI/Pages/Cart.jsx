@@ -14,7 +14,7 @@ const Cart = ({ cartItems = [], setCartItems,theme }) => {
   }
 
   const removeFromCart = (id) => {
-    const updatedCart = cartItems.filter(item => item.id !== id);
+    const updatedCart = cartItems.filter(item => item._id !== id);
     setCartItems(updatedCart);
   };
 
@@ -24,14 +24,14 @@ const Cart = ({ cartItems = [], setCartItems,theme }) => {
         {/* Display cart items */}
         {cartItems.map((item) => (
           <div
-            key={item.id}
+            key={item._id}
             className="card card-side bg-base-100 shadow-xl flex flex-col items-center w-screen max-w-xs"
             style={{  backgroundColor: theme === 'light' ? 'white' : '#333', 
               color: theme === 'light' ? '#333' : '#fff'}}
           >
             <figure>
               <img
-                src={item.image}
+                src={`https://ps-server-five.vercel.app/products/${item._id}/image`}
                 alt={item.name}
                 className="w-full h-32 object-cover"
               />
@@ -41,10 +41,12 @@ const Cart = ({ cartItems = [], setCartItems,theme }) => {
               <p>Price: {item.price}</p>
               <p>Quantity: {item.quantity}</p>
               <p>Total: ₹ {item.totalPrice.toFixed(2)}</p>
-              <div className="card-actions justify-end">
+              <div className="card-actionscenter">
                 <button
                   className="btn bar"
-                  onClick={() => removeFromCart(item.id)}
+                  onClick={() => removeFromCart(item._id)}
+                  style={{width:"200px",height:"40px"}}
+                
                 >
                   Remove
                 </button>

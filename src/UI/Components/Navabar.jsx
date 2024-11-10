@@ -154,13 +154,13 @@ const Navbar = ({ theme ,toggleTheme}) => {
        style={{backgroundColor: theme === 'light' ? 'white' : '#333', 
         color: theme === 'light' ? '#ee2d7d' : '#fff' }}>
         <ul>
-        <li className='for-hover'>
-          <Link to="/" style={{backgroundColor: theme === 'light' ? 'white' : '#333', 
+        <li>
+            <Link to="/" style={{backgroundColor: theme === 'light' ? 'white' : '#333', 
           color: theme === 'light' ? '#ee2d7d' : '#fff'}} onClick={toggleMenu} >Home</Link>
           </li>
           <li>
             <Link to="/products" style={{backgroundColor: theme === 'light' ? 'white' : '#333', 
-            color: theme === 'light' ? '#ee2d7d' : '#fff'}} onClick={toggleMenu}>Products</Link>
+          color: theme === 'light' ? '#ee2d7d' : '#fff'}} onClick={toggleMenu}>Products</Link>
           </li>
           {/* <li>
             <Link to="/deals" onClick={toggleMenu}>Deals</Link>
