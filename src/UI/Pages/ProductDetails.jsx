@@ -46,7 +46,7 @@ const ProductDetails = ({ theme }) => {
           <div className="lg:w-96 sm:w-full mx-2 my-0">
             <figure className="px-10 md:flex justify-center sm:flex justify-center">
               <img
-                src={`https://ps-server-five.vercel.app/products/${product._id}/image`}
+                src={`https://backendpanishop.vercel.app/products/${product._id}/image`}
                 alt={product.name}
                 className="rounded-xl"
                 width="300px"
