@@ -109,7 +109,7 @@ const Products = ({ setCartItems, theme, refreshTrigger }) => {
                 >
                   <figure className="px-10 pt-10">
                     <img
-                      src={`https://ps-server-five.vercel.app/products/${product._id}/image`}
+                      src={`https://backendpanishop.vercel.app/products/${product._id}/image`}
                       alt={product.name}
                       className="rounded-xl"
                       width="100px"
