@@ -11,7 +11,7 @@ const ProductDetails = ({ theme }) => {
     // Fetch product data by ID from the API
     const fetchProduct = async () => {
       try {
-        const response = await fetch(`https://ps-server-five.vercel.app/products/${id}`);
+        const response = await fetch(`https://backendpanishop.vercel.app/products/${id}`);
         const data = await response.json();
         setProduct(data); // Set the fetched product data to state
         setLoading(false);
