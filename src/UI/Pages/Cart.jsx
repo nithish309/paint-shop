@@ -31,7 +31,7 @@ const Cart = ({ cartItems = [], setCartItems,theme }) => {
           >
             <figure>
               <img
-                src={`https://ps-server-five.vercel.app/products/${item._id}/image`}
+                src={`https://backendpanishop.vercel.app/products/${item._id}/image`}
                 alt={item.name}
                 className="w-full h-32 object-cover"
               />
