@@ -71,7 +71,7 @@ const Homepage = ({ props ,theme}) => {
         <div className="carousel w-screen lg:w-11/12 lg:ml-16 mt-5 lg:mt-10 md:w-11/12">
           <div id="item1" className="carousel-item w-full">
             <img
-              src="https://www.nipponpaint.co.in/wp-content/uploads/2021/05/our-product-1-2.png"
+              src="https://nipponpaint.co.in/wp-content/uploads/2024/09/our-product-1-2-1024x376.png"
               className="w-full"
             />
           </div>
